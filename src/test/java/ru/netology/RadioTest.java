@@ -49,40 +49,26 @@ public class RadioTest {
 
         Radio radio = new Radio();
         radio.currentStation = -1;
-        int expected = -1;
+        int expected = 9;
         radio.decreaseStation();
         int actual = radio.currentStation;
 
         assertEquals(expected, actual);
     }
 
-    @Test
-
-    public void shouldEstablishStation0(){
-
-        Radio radio = new Radio();
-        radio.currentStation = 9;
-        int expected = 0;
-        radio.maxStation();
-        int actual = radio.currentStation;
-
-        assertEquals (expected, actual);
-
-    }
-
-    @Test
-
-    public void shouldEstablishMinStation(){
-
-        Radio radio = new Radio();
-        radio.currentStation = 0;
-        int expected = 0;
-        radio.maxStation();
-        int actual = radio.currentStation;
-
-        assertEquals (expected, actual);
-
-    }
+//    @Test
+//
+//    public void shouldEstablishStation0(){
+//
+//        Radio radio = new Radio();
+//        radio.currentStation = 9;
+//        int expected = 0;
+//        radio.increaseStation();
+//        int actual = radio.currentStation;
+//
+//        assertEquals (expected, actual);
+//
+//    }
 
     @Test
     public void shouldEstablishStation9(){
@@ -90,25 +76,25 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.currentStation = 0;
         int expected = 9;
-        radio.minStation();
+        radio.decreaseStation();
         int actual = radio.currentStation;
 
         assertEquals (expected, actual);
 
     }
 
-    @Test
-    public void shouldEstablishMaxStation(){
-
-        Radio radio = new Radio();
-        radio.currentStation = 9;
-        int expected = 9;
-        radio.minStation();
-        int actual = radio.currentStation;
-
-        assertEquals (expected, actual);
-
-    }
+//    @Test
+//    public void shouldEstablishMaxStation(){
+//
+//        Radio radio = new Radio();
+//        radio.currentStation = 9;
+//        int expected = 9;
+//        radio.increaseStation();
+//        int actual = radio.currentStation;
+//
+//        assertEquals (expected, actual);
+//
+//    }
 
     @Test
     public void shouldIncreaseVolume(){
@@ -127,8 +113,8 @@ public class RadioTest {
     public void shouldNotIncreaseVolume(){
 
         Radio radio = new Radio();
-        radio.currentVolume = 11;
-        int expected = 11;
+        radio.currentVolume = 10;
+        int expected = 10;
         radio.increaseVolume();
         int actual = radio.currentVolume;
 
@@ -154,7 +140,7 @@ public class RadioTest {
 
         Radio radio = new Radio();
         radio.currentVolume = -1;
-        int expected = -1;
+        int expected = 0;
         radio.decreaseVolume();
         int actual = radio.currentVolume;
 
@@ -167,19 +153,19 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.currentVolume = 10;
         int expected = 10;
-        radio.maxVolume();
+        radio.increaseVolume();
         int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNotEstablishMaxVolume() {
+    public void shouldEstablishMaxVolume() {
 
         Radio radio = new Radio();
-        radio.currentVolume = 9;
-        int expected = 9;
-        radio.maxVolume();
+        radio.currentVolume = 11;
+        int expected = 10;
+        radio.increaseVolume();
         int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
@@ -191,7 +177,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.currentVolume = 0;
         int expected = 0;
-        radio.minVolume();
+        radio.decreaseVolume();
         int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
@@ -203,7 +189,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.currentVolume = 1;
         int expected = 1;
-        radio.minVolume();
+        radio.decreaseStation();
         int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
