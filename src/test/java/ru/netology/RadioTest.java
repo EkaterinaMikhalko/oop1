@@ -200,6 +200,15 @@ public class RadioTest {
         assertEquals(6, radio.getCurrentStation());
     }
 
+    @Test
+    public void shouldSetCurrentStation15 () {
+
+        Radio radio = new Radio();
+        radio.numberOfStations = 20;
+        radio.setCurrentStation(15);
+        assertEquals(15,radio.getCurrentStation());
+    }
+
 
 
     }
