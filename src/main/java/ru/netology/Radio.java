@@ -16,6 +16,7 @@ public class Radio {
 
 
     public void increaseStation() {
+        int maxStation = numberOfStations - 1;
         if (currentStation <= maxStation) {
             currentStation = currentStation + 1;
         }
@@ -27,6 +28,7 @@ public class Radio {
     }
 
     public void decreaseStation() {
+        int maxStation = numberOfStations - 1;
         if (currentStation >= 0) {
             currentStation = currentStation - 1;
         }
